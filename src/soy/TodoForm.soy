@@ -4,10 +4,17 @@
  * This renders the component's whole content.
  */
 {template .render}
-	<form class="todo-form">
-		<label for="title">
-			Todo <input name="title" />
-		</label>
-		<button type="submit">Add</button>
-	</form>
+    {@param? value: string}
+	{@param? desc: string}
+
+    <form class="todo-form" data-onsubmit="handleSubmit">
+        <label for="title">
+            Todo <input data-onkeyup="handleChangeValue" name="title" value="{$value}" />
+        </label>
+		</br>
+		<label for="how">
+            How <input data-onkeyup="handleChangeDesc" name="how" value="{$desc}" />
+        </label>
+        <button type="submit">Add</button>
+    </form>
 {/template}

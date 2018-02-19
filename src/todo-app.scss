@@ -1,5 +1,6 @@
 body {
 	margin: 20px;
+	font-family: Arial, Helvetica, sans-serif
 }
 
 .todo-form, .todo-list {
@@ -8,9 +9,33 @@ body {
 
 .todo-item {
 	font-weight: 600;
+	list-style-type: none;
 }
 
 .todo-item.todo-item-done {
 	text-decoration: line-through;
 	font-weight: 300;
+	list-style-type: none;
+}
+
+.todo-card {
+	padding: 5px; 
+	background: white; 
+	margin-top:5px;
+	text-align:center;
+}
+
+.todo-card-title {
+	padding: 3px; 
+	background:#1A237E;
+	color: white;
+	font-size:21px;
+}
+
+.todo-card-decription {
+	padding: 3px; 
+	background:#E8EAF6;
+	color: darkslategray;
+	font-size:15px;
+	text-align:left;
 }

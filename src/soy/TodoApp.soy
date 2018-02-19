@@ -4,9 +4,21 @@
  * This renders the component's whole content.
  */
 {template .render}
+	{@param? handleTodoAdd: ?}
+	{@param? handleTodoClick: ?}
+	{@param? todos: ?}
 	<div class="todo-app">
 		<ul>
-			[TODO]
+			{foreach $todo in $todos}
+				{call TodoItem.render}
+					{param events: ['todoClick' : $handleTodoClick] /}
+					{param index: index($todo) /}
+					{param todo: $todo /}
+				{/call}
+			{/foreach}
 		</ul>
+		{call TodoForm.render}
+            {param events: ['todoAdd' : $handleTodoAdd] /}
+        {/call}
 	</div>
 {/template}

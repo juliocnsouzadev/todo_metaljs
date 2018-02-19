@@ -4,9 +4,21 @@
  * This renders the component's whole content.
  */
 {template .render}
-	<li
-		class="todo-item"
-	>
-		[TODO]
+	{@param todo: ?}
+	{let $elementClasses kind="text"}
+		todo-item
+		{if $todo.done}
+			{sp}todo-item-done
+		{/if}
+	{/let}
+	<li class="{$elementClasses}" data-onclick="handleClick">
+		<div class="todo-card">
+				<div class="todo-card-title">
+				What todo?... <b>{$todo.title}</b>
+				</div>
+				<div class="todo-card-decription">
+					<p>{$todo.description}</p>
+				</div>
+		</div>
 	</li>
 {/template}
